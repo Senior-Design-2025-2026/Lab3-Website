@@ -1,11 +1,20 @@
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('passwordEntered') !== null && localStorage.getItem('passwordEntered') == 'true') {
+    window.location.replace('secret.html');
+  }
+});
+
 document.getElementById('btn').addEventListener('click', async () => {
   const input = document.getElementById('fname').value;
   const hash = await sha256(input);
 
   if (hash == '4c840dbe7101698b1eeac6039609e37bb00f8f093f83062df8ffc7ced1fc025f') {
     alert('Correct password');
+    localStorage.setItem('passwordEntered', 'true');
+    window.location.replace('secret.html');
   } else {
     alert('Incorrect password');
+    localStorage.setItem('passwordEntered', 'false');
   }
 });
 
