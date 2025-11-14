@@ -345,3 +345,7 @@ body {
   width:50%;
   height: auto;
 }
+
+.alt-text {
+  color: var(--yellow-dark);
+}
