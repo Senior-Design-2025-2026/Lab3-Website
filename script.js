@@ -1,6 +1,6 @@
 // Import Firebase v9+ modular SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+import { getDatabase, set, ref, get, child } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -17,18 +17,38 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-
-// Example: read value at /users/user1/name
 const dbRef = ref(db);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('passwordEntered') !== null && localStorage.getItem('passwordEntered') == 'true') {
-    window.location.replace('secret.html');
+  let userId = localStorage.getItem('userId');
+  if (!userId) {
+      userId = crypto.randomUUID(); // generates a unique ID
+      localStorage.setItem('userId', userId);
+      set(ref(db, 'users/' + userId), false)
+        .then(() => console.log("User added!"))
+        .catch(err => console.error(err));
+  } 
+  else {
+
+    get(ref(db, 'users/' + userId))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            const passwordEntered = snapshot.val();
+            if (passwordEntered == true) {
+              window.location.replace('secret.html');
+            }
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   }
 });
 
+// When enter is pressed, we check the hash of the user input with our stored password
 document.getElementById('btn').addEventListener('click', async () => {
+  let userId = localStorage.getItem('userId');
   const input = document.getElementById('fname').value;
   const hash = await sha256(input);
   const snapshot = await get(child(dbRef, 'passwordHash'));
@@ -41,12 +61,10 @@ document.getElementById('btn').addEventListener('click', async () => {
   }
 
   if (hash == hashedPassword) {
-    alert('Correct password');
-    localStorage.setItem('passwordEntered', 'true');
+    set(ref(db, 'users/' + userId), true);
     window.location.replace('secret.html');
   } else {
     alert('Incorrect password');
-    localStorage.setItem('passwordEntered', 'false');
   }
 });
 
