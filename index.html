@@ -7,23 +7,38 @@
 </head>
 <body>
 
-   <!-- ======= -->
-   <!-- navbar  -->
-   <!-- ======= -->
-    <div class="nav-container">
+    <!-- ======= -->
+    <!-- navbar  -->
+    <!-- ======= -->
+    <div class="nav-container" style="background-color: white;">
         <!-- lhs -->
         <div>
             <div class="nav-lhs">
-                <img class="logo" src="src/img/logo.svg" alt="logo">
+                <div class="title">UIOWA ECE Senior Design</div>
                 <div class="vertical-bar"></div>
-                <div class="title">ECE Senior Design Team 3</div>
+                <img class="nav-logo" src="src/img/logo.svg" alt="logo">
+
             </div>
         </div>
 
         <!-- rhs -->
-        <div>
+        <div class="nav-rhs">
             <div>
-                <a href="src/admin/enter-password.html" style="text-decoration: none;">
+                <a href="mailto:uiowaseniordesignteam3@gmail.com?cc=
+                steven-j-austin@uiowa.edu@uiowa.edu,
+                sage-marks@uiowa.edu@uiowa.edu,
+                matthew-krueger@uiowa.edu@uiowa.edu,
+                zack-mulholland@uiowa.edu@uiowa.edu
+                &subject=ECE Senior Design Team 3 | Portfolio
+                ">
+                    <button class="btn-yellow">
+                        Contact Us
+                    </button>
+                </a>
+            </div>
+
+            <div>
+                <a href="src/admin/enter-password.html">
                     <button class="btn-gray">Admin</button>
                 </a>
             </div>
@@ -31,29 +46,93 @@
         
     </div>
 
+    <!-- ============ -->
+    <!-- hero section -->
+    <!-- ============ -->
+    <div class="hero-container">
+        <h1>Welcome to Team 3's Portfolio</h1>
+        <img class="beacon-hill" src="src/img/BeaconHill.png">
 
-    <!-- buttons -->
-    <div class="card">
-        <h1>Welcome!</h1>
-        <h4>Select which portfolio you would like to see</h4>
+        <!-- lhs - team logo & welcome -->
+        <div class="welcome-section" style="margin-top: 20px;">
+            <div style="font-size: 30px; font-weight: bolder;">
+                “If you track it, the crops will come.”
+            </div>
+            <div style="font-size: 20px; font-weight: normal; font-style: italic;">
+            - probably someone who used <span class="alt-text">BeaconHill</span>
+            </div>
+        </div>
 
-        <a href="src/portfolio/steven-portfolio.html" style="text-decoration: none;">
-            <button class="btn-yellow">Steven Austin</button>
-        </a>
+        <!-- rhs - team members -->
+        <div class="hero-team-members" style="margin-bottom: 40px;">
+            <div class="group-header">
+                Meet the Team - Click on a Member to View their Portfolio
+            </div>
+            <div class="member-group">
+                <!-- steven -->
+                <a href="src/pages/steven-portfolio.html">
+                    <div class="member-card">
+                        <img class="member-img" src="src/img/steven_pic.png">
 
-        <a href="src/portfolio/matthew-portfolio.html" style="text-decoration: none;">
-            <button class="btn-yellow">Matthew Krueger</button>
-        </a>
+                        <div class="member-row">
+                            <div class="member-name">
+                                Steven Austin
+                            </div>
+                            <!-- <div class="member-major">
+                                E.C.E
+                            </div> -->
+                        </div>
+                    </div>
+                </a>
 
-        <a href="src/portfolio/sage-portfolio.html" style="text-decoration: none;">
-            <button class="btn-yellow">Sage Marks</button>
-        </a>
+                <!-- sage -->
+                <a href="src/pages/sage-portfolio.html">
+                    <div class="member-card">
+                        <img class="member-img" src="src/img/sage_pic.jpeg">
 
-        <a href="src/portfolio/zack-portfolio.html" style="text-decoration: none;">
-            <button class="btn-yellow">Zack Mulholland</button>
-        </a>
-    </div>
+                        <div class="member-row">
+                            <div class="member-name">
+                                Sage Marks
+                            </div>
+                            <!-- <div class="member-major">
+                                E.E
+                            </div> -->
+                        </div>
+                    </div>
+                </a>
 
+                <!-- zack -->
+                <a href="src/pages/zack-portfolio.html">
+                    <div class="member-card">
+                        <img class="member-img" src="src/img/zack_pic.jpeg">
+
+                        <div class="member-row">
+                            <div class="member-name">
+                                Zack Mulholland
+                            </div>
+                            <!-- <div class="member-major">
+                                C.S.E
+                            </div> -->
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- matt -->
+                <a href="src/pages/matthew-portfolio.html">
+                    <div class="member-card">
+                        <img class="member-img" src="src/img/matt_pic.jpeg">
+
+                        <div class="member-row">
+                            <div class="member-name">
+                                Matt Krueger
+                            </div>
+                            <!-- <div class="member-major">
+                                C.S.E
+                            </div> -->
+                        </div>
+                    </div>
+                </a>
+        </div>
 
 </body>
 </html>
