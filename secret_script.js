@@ -5,7 +5,7 @@ import { getDatabase, ref, get, set, child, push } from "https://www.gstatic.com
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyB2xT5fNZCbfzuhL_Q46rGz9YQk3Q0fwY4",
   authDomain: "seniordesignlab3-9eca4.firebaseapp.com",
   projectId: "seniordesignlab3-9eca4",
   storageBucket: "seniordesignlab3-9eca4.firebasestorage.app",
