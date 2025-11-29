@@ -2,7 +2,8 @@
   /* colors */
   --black: #000000;
 
-  --white-white: #FFFFFF;
+  --white: #FFFFFF;
+  --white-bkg: #ececec; 
 
   --yellow-light: #FFDD00;
   --yellow-dark: #dcbe00;
@@ -54,7 +55,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 100px;
-  background-color: var(--white);
+  background-color: var(--white-bkg);
 }
 
 .nav-container {
@@ -192,9 +193,86 @@ body {
 
 .hero-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 0;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.hero-left > img {
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.hero-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+.quote-text {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.quote-author {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.team-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.team-intro h1 {
+  margin: 0;
+}
+
+.team-intro p {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.team-note {
+  text-align: left;
+  font-size: 18px;
+  color: var(--gray-dark);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .footer-container {
@@ -265,8 +343,10 @@ body {
 }
 
 .member-img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  height: auto;
   border-radius: var(--radius-lg);
   -webkit-user-drag: none;
   -moz-user-drag: none;   
@@ -342,10 +422,22 @@ body {
 }
 
 .beacon-hill {
-  width:50%;
+  width: 100%;
   height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  flex: 1 1 0;
+  min-height: 0;
+  display: block;
 }
 
 .alt-text {
   color: var(--yellow-dark);
+}
+ 
+.bento {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-bottom);
 }
