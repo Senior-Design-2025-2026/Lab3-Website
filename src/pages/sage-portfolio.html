@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sage's Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ======= -->
+    <!-- navbar  -->
+    <!-- ======= -->
+    <div class="nav-container" style="background-color: white;">
+        <!-- lhs -->
+        <div>
+            <div class="nav-lhs">
+                <a href="../../index.html" style="text-decoration: none; color: inherit;">
+                    <div class="title">UIOWA ECE Senior Design</div>
+                </a>
+                <div class="vertical-bar"></div>
+                <img class="nav-logo" src="../img/logo.svg" alt="logo">
+            </div>
+        </div>
+
+        <!-- rhs -->
+        <div class="nav-rhs">
+            <div>
+                <a href="../../index.html">
+                    <button class="home-btn">
+                        <img src="../img/home.svg" alt="Home" class="home-icon">
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="mailto:uiowaseniordesignteam3@gmail.com?cc=
+                steven-j-austin@uiowa.edu@uiowa.edu,
+                sage-marks@uiowa.edu@uiowa.edu,
+                matthew-krueger@uiowa.edu@uiowa.edu,
+                zack-mulholland@uiowa.edu@uiowa.edu
+                &subject=ECE Senior Design Team 3 | Portfolio
+                ">
+                    <button class="btn-yellow">
+                        Contact Us
+                    </button>
+                </a>
+            </div>
+
+            <div>
+                <a href="../admin/enter-password.html">
+                    <button class="btn-gray">Admin</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Container -->
+    <div class="portfolio-container">
+        <!-- First Row - Images Column -->
+        <div class="portfolio-images-column">
+            <div class="bento bento-img-container">
+                <img src="../img/sage_pic.jpeg" alt="Sage" class="bento-img">
+            </div>
+            <div class="bento bento-img-container">
+                <img src="../img/Jordan_Love_Lombardi.jpg" alt="Jordan Love" class="bento-img">
+            </div>
+            <div class="bento bento-img-container">
+                <img src="../img/Big_Ol_Bass.png" alt="Large Mouth Bass" class="bento-img">
+            </div>
+        </div>
+
+        <!-- Second Row - Contact Form -->
+        <div class="portfolio-form-container">
+            <div class="bento modern-form-wrapper">
+                <h1 class="form-title">Send Sage a Message</h1>
+                
+                <form class="modern-form" onsubmit="event.preventDefault(); onSubmitted('Sage'); this.reset();">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" type="text" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" type="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Type your message here..." rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-yellow form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/contact_form.js"></script>
+</body>
+</html>
