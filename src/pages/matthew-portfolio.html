@@ -6,17 +6,133 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Matthew's Portfolio</h1>
+    <!-- ======= -->
+    <!-- navbar  -->
+    <!-- ======= -->
+    <div class="nav-container" style="background-color: white;">
+        <!-- lhs -->
+        <div>
+            <div class="nav-lhs">
+                <a href="../../index.html" style="text-decoration: none; color: inherit;">
+                    <div class="title">UIOWA ECE Senior Design</div>
+                </a>
+                <div class="vertical-bar"></div>
+                <img class="nav-logo" src="../img/logo.svg" alt="logo">
+            </div>
+        </div>
 
-    <form>
-      <label for="fname">Name</label>
-      <input id="name" type="text">
-      <label for="fname">Email</label>
-      <input id="email" type="text">
-      <label for="fname">Message</label>
-      <input id="message" type="text">
-      <input type="submit" onclick="onSubmitted('Matthew')">
-    </form>
+        <!-- rhs -->
+        <div class="nav-rhs">
+            <div>
+                <a href="../../index.html">
+                    <button class="home-btn">
+                        <img src="../img/home.svg" alt="Home" class="home-icon">
+                    </button>
+                </a>
+            </div>
+            <div>
+                <a href="mailto:uiowaseniordesignteam3@gmail.com?cc=
+                steven-j-austin@uiowa.edu@uiowa.edu,
+                sage-marks@uiowa.edu@uiowa.edu,
+                matthew-krueger@uiowa.edu@uiowa.edu,
+                zack-mulholland@uiowa.edu@uiowa.edu
+                &subject=ECE Senior Design Team 3 | Portfolio
+                ">
+                    <button class="btn-yellow">
+                        Contact Us
+                    </button>
+                </a>
+            </div>
+
+            <div>
+                <a href="../admin/enter-password.html">
+                    <button class="btn-gray">Admin</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Container -->
+    <div class="portfolio-container">
+        <!-- First Row - Bento Grid (Pictures and Text) -->
+        <div class="portfolio-bento-grid">
+            <!-- Images Column -->
+            <div class="bento-images-column">
+                <!-- First Row - Large Trot image -->
+                <div class="bento-trot-row">
+                    <div class="bento bento-img-container">
+                        <img src="../img/matt_trot.jpeg" alt="Matthew" class="bento-img">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Text Column -->
+            <div class="bento-text-column">
+                <div class="bento bento-text-content">
+                    <div>
+                        <h1 class="bento-text-title">Matt Krueger</h1>
+                        <p class="bento-text-desc">Computer Science and Engineering</p>
+                    </div>
+                    
+                    <div class="bento-text-section">
+                        <h2 class="bento-text-section-title">Favorites:</h2>
+                        <ul class="bento-text-list">
+                            <li>- Movie: Star Wars, Revenge of the Sith</li>
+                            <li>- Book: Harry Potter and the Deathly Hallows</li>
+                            <li>- Food: Papa John's Stuffed Crust Pizza</li>
+                            <li>- Sports Team: Green Bay Packers</li>
+                            <li>- Athlete: LeBron James</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bento-text-section">
+                        <h2 class="bento-text-section-title">Experiences:</h2>
+                        <ul class="bento-text-list">
+                            <li>- Part-Time Student Product Engineer, John Deere ISG (2 yrs)</li>
+                            <li>- Part-Time Student Software Developer, FarrPro (1 yr)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bento-logos-row">
+                    <div class="bento bento-img-container bento-img-small">
+                        <img src="../img/matt_jd.png" alt="Matthew at John Deere" class="bento-img">
+                    </div>
+                    <div class="bento bento-img-container bento-img-small">
+                        <img src="../img/matt_farpro.png" alt="Matthew at FarrPro" class="bento-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row - Contact Form -->
+        <div class="portfolio-form-container">
+            <div class="bento modern-form-wrapper">
+                <h1 class="form-title">Send Matthew a Message</h1>
+                
+                <form class="modern-form" onsubmit="event.preventDefault(); onSubmitted('Matthew'); this.reset();">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" type="text" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" type="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Type your message here..." rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-yellow form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/contact_form.js"></script>
 </body>
-  <script src="src/script/contact_form.js"></script>
 </html>
