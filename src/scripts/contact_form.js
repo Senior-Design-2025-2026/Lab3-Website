@@ -27,6 +27,25 @@ const memberEmails = {
   'Zack': 'zack-mulholland@uiowa.edu'
 };
 
+// Add form handlers if the form exists
+function attachFormHandler(id, name) {
+  const form = document.getElementById(id);
+  if (!form) return; // form doesn't exist on this page
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    onSubmitted(name);
+    form.reset();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  attachFormHandler('matthew-form', 'Matthew');
+  attachFormHandler('sage-form', 'Sage');
+  attachFormHandler('steven-form', 'Steven');
+  attachFormHandler('zack-form', 'Zack');
+});
+
 function onSubmitted(to) {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;

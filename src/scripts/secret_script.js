@@ -68,46 +68,49 @@ function displayMessages() {
 
   get(messagesRef)
     .then((snapshot) => {
+
+      let messages = [];
+
       if (snapshot.exists()) {
-        const messagesData = snapshot.val();
-        const messages = Object.values(messagesData);
+        messages = Object.values(snapshot.val());
       }
-    })
+ 
+
+      // Update stats
+      const messageCount = messages.length;
+      if (messageCount === 0) {
+        stats.innerHTML = '<p class="stats-text">No messages in inbox</p>';
+        inbox.innerHTML = `
+          <div class="empty-state">
+            <p class="empty-text">No messages yet. Messages will appear here when users submit the contact form.</p>
+          </div>
+        `;
+        return;
+      }
+
+      stats.innerHTML = `<p class="stats-text"><strong>${messageCount}</strong> ${messageCount === 1 ? 'message' : 'messages'} in inbox</p>`;
+
+      // Generate email list
+      inbox.innerHTML = messages.map((msg, index) => `
+        <div class="email-item">
+          <div class="email-header">
+            <div class="email-meta">
+              <div class="email-from">
+                <span>${escapeHtml(msg.name)}</span>
+                <span class="email-address">(${escapeHtml(msg.email)})</span>
+              </div>
+              <div class="email-to">To: ${escapeHtml(msg.to)}</div>
+              <div class="email-date">${formatDate(msg.timestamp)}</div>
+            </div>
+          </div>
+          <div class="email-body">${escapeHtml(msg.message).replace(/\n/g, '<br>')}</div>
+        </div>
+      `).join('');
+     })
     .catch((error) => {
       console.error(error);
       inbox.innerHTML = '<p>Error loading messages.</p>';
     });
-
-  // Update stats
-  const messageCount = messages.length;
-  if (messageCount === 0) {
-    stats.innerHTML = '<p class="stats-text">No messages in inbox</p>';
-    inbox.innerHTML = `
-      <div class="empty-state">
-        <p class="empty-text">No messages yet. Messages will appear here when users submit the contact form.</p>
-      </div>
-    `;
-    return;
-  }
-
-  stats.innerHTML = `<p class="stats-text"><strong>${messageCount}</strong> ${messageCount === 1 ? 'message' : 'messages'} in inbox</p>`;
-
-  // Generate email list
-  inbox.innerHTML = messages.map((msg, index) => `
-    <div class="email-item">
-      <div class="email-header">
-        <div class="email-meta">
-          <div class="email-from">
-            <span>${escapeHtml(msg.name)}</span>
-            <span class="email-address">(${escapeHtml(msg.email)})</span>
-          </div>
-          <div class="email-to">To: ${escapeHtml(msg.to)}</div>
-          <div class="email-date">${formatDate(msg.date)}</div>
-        </div>
-      </div>
-      <div class="email-body">${escapeHtml(msg.message).replace(/\n/g, '<br>')}</div>
-    </div>
-  `).join('');
 }
 
 function escapeHtml(text) {
@@ -115,3 +118,5 @@ function escapeHtml(text) {
   div.textContent = text;
   return div.innerHTML;
 }
+
+window.displayMessages = displayMessages;
