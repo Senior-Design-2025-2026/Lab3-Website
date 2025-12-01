@@ -54,13 +54,52 @@
 
     <!-- Portfolio Container -->
     <div class="portfolio-container">
-        <!-- First Row - Images Column -->
-        <div class="portfolio-images-column">
-            <div class="bento bento-img-container">
-                <img src="../img/zack_pic.jpeg" alt="Zack" class="bento-img">
+        <div class="portfolio-bento-grid">
+            <!-- First Row - Images Column -->
+            <div class="portfolio-images-column">
+                <div class="bento-trot-row">
+                    <div class="bento bento-img-container">
+                        <img src="../img/zack_pic.jpeg" alt="Zack" class="bento-img">
+                    </div>
+                </div>
             </div>
-            <div class="bento bento-img-container">
-                <img src="../img/isaac-newton.png" alt="Isaac Newton" class="bento-img">
+
+            <!-- Text Column -->
+            <div class="bento-text-column">
+                <div class="bento bento-text-content">
+                    <div>
+                        <h1 class="bento-text-title">Zack Mulholland</h1>
+                        <p class="bento-text-desc">Computer Science and Engineering</p>
+                    </div>
+                    
+                    <div class="bento-text-section">
+                        <h2 class="bento-text-section-title">Favorites:</h2>
+                        <ul class="bento-text-list">
+                            <li>- Movie: How the Grinch Stole Christmas</li>
+                            <li>- Book: Journey Through Genius</li>
+                            <li>- Food: Jack's Pizza and White Monster</li>
+                            <li>- Sports Team: Iowa</li>
+                            <li>- Obscure Hobby: Iowa Football/Basketball Scorigami Tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bento-text-section">
+                        <h2 class="bento-text-section-title">Experiences:</h2>
+                        <ul class="bento-text-list">
+                            <li>- Software Engineer Intern, Metalcraft (Summer 2025)</li>
+                            <li>- Future Software Developer at Epic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bento-logos-row">
+                    <div class="bento bento-img-container bento-img-small">
+                        <img src="../img/epic.png" alt="Zack at Epic" class="bento-img">
+                    </div>
+                    <div class="bento bento-img-container bento-img-small-fill">
+                        <img src="../img/isaac-newton.png" alt="Isaac Newton" class="bento-img">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -69,7 +108,7 @@
             <div class="bento modern-form-wrapper">
                 <h1 class="form-title">Send Zack a Message</h1>
                 
-                <form class="modern-form" onsubmit="event.preventDefault(); onSubmitted('Zack'); this.reset();">
+                <form class="modern-form" id="zack-form">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input id="name" type="text" class="form-input" placeholder="Enter your name" required>
@@ -91,6 +130,6 @@
         </div>
     </div>
 
-    <script src="../scripts/contact_form.js"></script>
+    <script type="module" src="../scripts/contact_form.js"></script>
 </body>
 </html>

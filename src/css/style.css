@@ -558,6 +558,21 @@ body {
   box-sizing: border-box;
 }
 
+.bento-img-small-fill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden; /* ensures anything outside the box is hidden */
+}
+
+.bento-img-small-fill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes the image fill the box without stretching */
+}
+
 .bento-grid-row {
   display: flex;
   height: 100%;
