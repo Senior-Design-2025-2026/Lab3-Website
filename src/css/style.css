@@ -680,6 +680,15 @@ body {
   -o-user-drag: none;
 }
 
+.bento-img-dog {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
 .bento-img-small .bento-img {
   object-fit: contain;
   max-width: 70%;
